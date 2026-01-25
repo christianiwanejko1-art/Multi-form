@@ -46,7 +46,7 @@ html, body {
     grid-template-columns: 1fr 4fr;
     grid-template-rows: repeat(2, 1fr);
     position: relative;
-    padding: 16px;
+    padding: 32px;
 }
 
 .stepNo {
@@ -54,13 +54,15 @@ html, body {
     grid-row: 1;
   padding-left: 16px;
     align-self: end;
+    font-weight: 200;
 }
 
 .stepInfo {
     grid-column: 2;
     grid-row: 2;
-  padding-left: 16px;
-
+    padding-left: 16px;
+    align-self: start;
+    font-size: 16px;
 }
 
 .circle {
@@ -120,6 +122,76 @@ html, body {
     grid-column: 2 / 4;
     grid-row: 1 / 7;
     background-color: white;
+    display: grid;
+    grid-template-columns: 1fr 6fr 1fr;
+    grid-template-rows: 1fr 2fr 1fr;
+}
+
+#personalInfoSection {
+    grid-column: 2;
+    grid-row: 1;
+    margin: auto 0;
+}
+
+#personalInfoSection h1 {
+    color: var(--blue950);
+    padding-bottom: 16px;
+}
+
+#personalInfoSection p {
+    color: var(--grey500);
+}
+
+#form1 {
+    grid-column: 2;
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+#form1 label {
+    color: var(--blue950);
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+
+form input {
+  width: 100%;
+  box-sizing: border-box;
+  height: 48px;
+  margin-top: 16px;
+}
+
+.formInner {
+    padding: 32px 0;
+}
+
+#nextSteps {
+    grid-column: 2;
+    grid-row: 3;
+    display: flex;
+    flex-direction: column;
+}
+
+#nextSteps button {
+    background-color: var(--blue950);
+    padding: 16px;
+    padding-right: 32px;
+    padding-left: 32px;
+    border: 0px;
+    color: white;
+    border-radius: 8px;
+    align-self: end;
+    margin-top: auto;
+    margin-bottom: 32px;
+    cursor: pointer;
 }
 
 .attribution {
