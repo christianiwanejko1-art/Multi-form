@@ -1,0 +1,130 @@
+:root {
+    /* primary */
+    --blue950: hsl(213, 96%, 18%);
+    --purple600: hsl(243, 100%, 62%);
+    --blue300: hsl(228, 100%, 84%);
+    --blue200: hsl(206, 94%, 87%);
+    --red500: hsl(354, 84%, 57%);
+
+    /* secondary */
+    --grey500: hsl(231, 11%, 63%);
+    --purple200: hsl(229, 24%, 87%);
+    --blue100: hsl(218, 100%, 97%);
+    --blue50: hsl(231, 100%, 99%);
+    --white: White: hsl(0, 100%, 100%);
+
+    --fontBodySize: 16px;
+    --fontBodyFamily: 'Ubuntu', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--blue100);
+    font-size: var(--fontBodySize);
+    font-family: var(--fontBodyFamily);
+}
+
+html, body {
+    overflow: hidden;
+}
+
+/* step 1 */
+
+#sideBarSteps {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+}
+
+.step {
+    color: white;
+    display: grid;
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: repeat(2, 1fr);
+    position: relative;
+    padding: 16px;
+}
+
+.stepNo {
+    grid-column: 2;
+    grid-row: 1;
+  padding-left: 16px;
+    align-self: end;
+}
+
+.stepInfo {
+    grid-column: 2;
+    grid-row: 2;
+  padding-left: 16px;
+
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid rgb(255, 255, 255);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-weight: bold;
+  font-size: 16px;
+  grid-column: 1;
+  grid-row: 1 / 3;
+  justify-self: end;
+  margin: auto 0;
+}
+
+.circleSelected {
+    background-color: white;
+    color: black;
+}
+
+#main {
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    grid-template-columns: 1fr 3fr 1fr;
+    grid-template-rows: 1fr 6fr 1fr;
+}
+
+#formMain {
+    grid-column: 2;
+    grid-row: 2 / 3;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    padding: 16px;
+    border-radius: 32px;
+}
+
+#sideBar {
+    grid-column: 0 / 1;
+    grid-row: 1 / 7;
+    background-color: blue;
+    width: 100%;
+    height: 100%;
+    border-radius: 16px;
+    background-image: url('./assets/images/bg-sidebar-desktop.svg');
+    background-size: cover;
+}
+
+#info {
+    grid-column: 2 / 4;
+    grid-row: 1 / 7;
+    background-color: white;
+}
+
+.attribution {
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    margin: 0 auto;
+}

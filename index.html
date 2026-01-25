@@ -3,9 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap" rel="stylesheet">
   <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-  
+  <link rel="stylesheet" type="text/css" href="styles.css">
   <title>Frontend Mentor | Multi-step form</title>
 
   <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
@@ -15,9 +17,39 @@
   </style>
 </head>
 <body>
+  <div id="main">
+    <div id="formMain">
+      <div id="sideBar">
+        <div id="sideBarSteps">
+          <div class="step">
+            <div class="circle circleSelected">1</div>
+            <p class="stepNo">STEP 1</p>
+            <h2 class="stepInfo">YOUR INFO</h2>
+          </div>
+          <div class="step">
+            <div class="circle">2</div>
+            <p class="stepNo">STEP 2</p>
+            <h2 class="stepInfo">SELECT PLAN</h2>
+          </div>
+          <div class="step">
+            <div class="circle">3</div>
+            <p class="stepNo">STEP 3</p>
+            <h2 class="stepInfo">ADD-ONS</h2>
+          </div>
+          <div class="step">
+            <div class="circle">4</div>
+            <p class="stepNo">STEP 4</p>
+            <h2 class="stepInfo">SUMMARY</h2>
+          </div>
+        </div>
+      </div>
+      <div id="info">
+    
+      </div>
+    </div>
 
   <!-- Sidebar start -->
-
+<!-- 
   Step 1
   Your info
 
@@ -28,13 +60,15 @@
   Add-ons
 
   Step 4
-  Summary
+  Summary -->
+
+
 
   <!-- Sidebar end -->
 
   <!-- Step 1 start -->
 
-  Personal info
+  <!-- Personal info
   Please provide your name, email address, and phone number.
 
   Name
@@ -46,13 +80,13 @@
   Phone Number
   e.g. +1 234 567 890
 
-  Next Step
+  Next Step -->
 
   <!-- Step 1 end -->
 
   <!-- Step 2 start -->
 
-  Select your plan
+  <!-- Select your plan
   You have the option of monthly or yearly billing.
 
   Arcade
@@ -68,12 +102,12 @@
   Yearly
 
   Go Back
-  Next Step
+  Next Step -->
 
   <!-- Step 2 end -->
 
   <!-- Step 3 start -->
-
+<!-- 
   Pick add-ons
   Add-ons help enhance your gaming experience.
 
@@ -90,37 +124,38 @@
   +$2/mo
 
   Go Back
-  Next Step
+  Next Step -->
 
   <!-- Step 3 end -->
 
   <!-- Step 4 start -->
 
-  Finishing up
-  Double-check everything looks OK before confirming.
+  <!-- Finishing up
+  Double-check everything looks OK before confirming. -->
 
   <!-- Dynamically add subscription and add-on selections here -->
 
-  Total (per month/year)
+  <!-- Total (per month/year)
 
   Go Back
-  Confirm
+  Confirm -->
 
   <!-- Step 4 end -->
 
   <!-- Step 5 start -->
 
-  Thank you!
+  <!-- Thank you!
 
   Thanks for confirming your subscription! We hope you have fun 
   using our platform. If you ever need support, please feel free 
   to email us at support@loremgaming.com.
 
-  <!-- Step 5 end -->
+  Step 5 end -->
   
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
+    <div class="attribution">
+      Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+      Coded by <a href="#">Christian Iwanejko - <a href='https://christianiwanejko1-art.github.io/portfolio/'>https://christianiwanejko1-art.github.io/portfolio/</a>.
+    </div>
   </div>
 </body>
 </html>
