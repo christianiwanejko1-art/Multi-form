@@ -243,12 +243,12 @@ form input::placeholder {
     padding: 8px;
 }
 
-.planActive {
-    border: 2px solid var(--blue950);
+.active {
+    border: 2px solid var(--blue300);
 }
 
 .plan:hover{
-    border: 2px solid var(--blue950);
+    border: 2px solid var(--blue300);
 }
 
 .attribution {
@@ -358,6 +358,16 @@ font-weight: bold;
 
 .selectedSwitch {
     color: var(--blue950);
+}
+
+.error {
+    width: auto;
+    float: right;
+    color: var(--red500);
+}
+
+.form-input {
+    border: 1px solid var(--blue950);
 }
 
 /* move knob when checked (Yearly) */

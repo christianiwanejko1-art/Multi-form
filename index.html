@@ -50,18 +50,21 @@
           <p>Please provide your name, email address, and phone number.</p>
         </div>
         <div id="form1">
-          <form id="step1Form">
+          <form id="step1Form" novalidate>
             <div class="formInner" id="nameContainer">
+              <p class="error" id="nameError" aria-live="polite"></p>
               <label for="name">Name</label>
-              <input name="name" type="text" id="name" placeholder="e.g. Stephen King" required>
+              <input class="form-input" name="name" type="text" id="name" placeholder="e.g. Stephen King" required>
             </div>
             <div class="formInner" id="emailContainer">
+              <p class="error" id="emailError" aria-live="polite"></p>
               <label for="email">Email Address</label>
-              <input name="email" type="email" id="email" placeholder="e.g. stephenhenking@lorem.com" required>
+              <input class="form-input" name="email" type="email" id="email" placeholder="e.g. stephenhenking@lorem.com" required>
             </div>
             <div class="formInner" id="telContainer">
+              <p class="error" id="phoneError" aria-live="polite"></p>
               <label for="phone">Phone Number</label>
-              <input name="phone" type="tel" id="phone" placeholder="e.g. +1 234 567 890" required>
+              <input class="form-input" name="phone" type="tel" id="phone" placeholder="e.g. +1 234 567 890" required>
             </div>
             <label for="submit1"></label>
           </form>
@@ -107,7 +110,7 @@
           <p>You have the option of monthly or yearly billing.</p>
         </div>
         <div id="plans">
-          <div class="plan planActive" id="plan1">
+          <div class="plan active" id="plan1">
             <img src="./assets/images/icon-arcade.svg">
             <h2>Arcade</h2>
             <p>$9/mo</p>
