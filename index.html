@@ -17,7 +17,7 @@
   </style>
 </head>
 <body>
-  <div id="step1" class="hidden">
+  <div id="step1" class="steps">
   <div id="main">
     <div id="formMain">
       <div id="sideBar">
@@ -50,31 +50,31 @@
           <p>Please provide your name, email address, and phone number.</p>
         </div>
         <div id="form1">
-          <form>
+          <form id="step1Form">
             <div class="formInner" id="nameContainer">
               <label for="name">Name</label>
-              <input type="text" id="name" placeholder="e.g. Stephen King" required>
+              <input name="name" type="text" id="name" placeholder="e.g. Stephen King" required>
             </div>
             <div class="formInner" id="emailContainer">
               <label for="email">Email Address</label>
-              <input type="email" id="email" placeholder="e.g. stephenhenking@lorem.com" required>
+              <input name="email" type="email" id="email" placeholder="e.g. stephenhenking@lorem.com" required>
             </div>
             <div class="formInner" id="telContainer">
               <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" placeholder="e.g. +1 234 567 890" required>
+              <input name="phone" type="tel" id="phone" placeholder="e.g. +1 234 567 890" required>
             </div>
             <label for="submit1"></label>
           </form>
         </div>
         <div id="nextSteps">
-          <button type="submit" id="submit1">Next Step</button>
+          <button form="step1Form" type="submit" class="submit1">Next Step</button>
         </div>
       </div>
     </div>
   </div>
   </div>
 
-  <div id="step2">
+  <div id="step2" class="steps hidden">
   <div id="main">
     <div id="formMain">
       <div id="sideBar">
@@ -123,8 +123,88 @@
             <p>$15/mo</p>
           </div>
         </div>
+        <div id="monthlyyearly">
+          <div id="monthlyyearlycontainer">
+            <div class="billing-switch">
+              <span class="label selectedSwitch">Monthly</span>
+
+              <label class="toggle">
+                <input type="checkbox" id="billingToggle">
+                <span class="pill" aria-hidden="true"></span>
+              </label>
+
+              <span class="label">Yearly</span>
+            </div>
+          </div>
+        </div>
         <div id="step2btn" >
-          <button type="submit" id="submit1">Next Step</button>
+          <button id="back">Go Back</button>
+          <button type="submit" class="submit1">Next Step</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  </div>
+
+    <div id="step3" class="steps hidden">
+  <div id="main">
+    <div id="formMain">
+      <div id="sideBar">
+        <div id="sideBarSteps">
+          <div class="step">
+            <div class="circle">1</div>
+            <p class="stepNo">STEP 1</p>
+            <h2 class="stepInfo">YOUR INFO</h2>
+          </div>
+          <div class="step">
+            <div class="circle">2</div>
+            <p class="stepNo">STEP 2</p>
+            <h2 class="stepInfo">SELECT PLAN</h2>
+          </div>
+          <div class="step">
+            <div class="circle circleSelected">3</div>
+            <p class="stepNo">STEP 3</p>
+            <h2 class="stepInfo">ADD-ONS</h2>
+          </div>
+          <div class="step">
+            <div class="circle">4</div>
+            <p class="stepNo">STEP 4</p>
+            <h2 class="stepInfo">SUMMARY</h2>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  </div>
+
+    <div id="step4" class="steps hidden">
+  <div id="main">
+    <div id="formMain">
+      <div id="sideBar">
+        <div id="sideBarSteps">
+          <div class="step">
+            <div class="circle">1</div>
+            <p class="stepNo">STEP 1</p>
+            <h2 class="stepInfo">YOUR INFO</h2>
+          </div>
+          <div class="step">
+            <div class="circle">2</div>
+            <p class="stepNo">STEP 2</p>
+            <h2 class="stepInfo">SELECT PLAN</h2>
+          </div>
+          <div class="step">
+            <div class="circle">3</div>
+            <p class="stepNo">STEP 3</p>
+            <h2 class="stepInfo">ADD-ONS</h2>
+          </div>
+          <div class="step">
+            <div class="circle circleSelected">4</div>
+            <p class="stepNo">STEP 4</p>
+            <h2 class="stepInfo">SUMMARY</h2>
+          </div>
         </div>
       </div>
 
@@ -240,6 +320,6 @@
       Coded by <a href="#">Christian Iwanejko - <a href='https://christianiwanejko1-art.github.io/portfolio/'>https://christianiwanejko1-art.github.io/portfolio/</a>.
     </div>
   </div>
-  
+  <script src="script.js"></script>
 </body>
 </html>
