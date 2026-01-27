@@ -28,7 +28,7 @@ if (!step1Form.checkValidity()) return;
     step2.classList.remove('hidden');
 })
 
-const backbtn = document.getElementById('back');
+const backbtn = document.getElementById('back1');
 
 backbtn.addEventListener('click', () => {
   const steps = [...document.querySelectorAll('.steps')];
@@ -94,4 +94,68 @@ cardGroup.addEventListener('click', (e) => {
     c.classList.remove('active');
   })
   card.classList.add('active');
+})
+
+
+const toggle = document.getElementById('billingToggle');
+const plan1 = document.getElementById('plan1');
+const plan1p = plan1.querySelector('p');
+
+const plan2 = document.getElementById('plan2');
+const plan2p = plan2.querySelector('p');
+
+const plan3 = document.getElementById('plan3');
+const plan3p = plan3.querySelector('p');
+const monthsFree = document.querySelectorAll('.monthInfo');
+const plans = document.querySelectorAll('.plan')
+
+toggle.addEventListener('change',()=>{
+  if (toggle.checked) {
+    // yearly options
+    monthsFree.forEach((month)=>{
+      month.classList.remove('monthsFreeHidden');
+    })
+    // plans.forEach((plan)=>{
+    //   plan.style.gridTemplateRows = `2fr 1fr 1fr 1fr`;
+    // })
+    plan1p.textContent = '$90/yr'
+    plan2p.textContent = '$120/yr'
+    plan3p.textContent = '$150/yr'
+  } else {
+    // monthly options
+    monthsFree.forEach((month)=>{
+      month.classList.add('monthsFreeHidden');
+    })
+    plan1p.textContent = '$9/mo'
+    plan2p.textContent = '$12/mo'
+    plan3p.textContent = '$15/mo'
+  }
+})
+
+const planBtn = document.getElementById('submit2');
+
+planBtn.addEventListener('click',()=>{
+  step2.classList.add('hidden');
+  step3.classList.remove('hidden');
+})
+
+const planBtn1 = document.getElementById('submit3');
+
+planBtn1.addEventListener('click',()=>{
+  step3.classList.add('hidden');
+  step4.classList.remove('hidden');
+})
+
+const back2 = document.getElementById('back2');
+
+back2.addEventListener(('click'),()=>{
+  step3.classList.add('hidden');
+  step2.classList.remove('hidden');
+})
+
+const back3 = document.getElementById('back3');
+
+back3.addEventListener(('click'),()=>{
+  step4.classList.add('hidden');
+  step3.classList.remove('hidden');
 })
