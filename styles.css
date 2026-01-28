@@ -35,10 +35,6 @@ html, body {
     overflow: hidden;
 }
 
-/* step 1 */
-
-
-
 #sideBarSteps {
     display: flex;
     flex-direction: column;
@@ -99,6 +95,7 @@ html, body {
     height: 100vh;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
+    box-sizing: border-box;
 }
 
 #formMain {
@@ -608,3 +605,4 @@ font-weight: bold;
 .hidden {
     display: none;
 }
+
