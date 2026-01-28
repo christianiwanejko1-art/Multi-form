@@ -3,7 +3,7 @@ const step2 = document.getElementById('step2');
 const step3 = document.getElementById('step3');
 const step4 = document.getElementById('step4');
 
-let customer = []
+let customer = [{id:1}]
 const step1btn = document.getElementById('submit1');
 const step2btn = document.getElementById('submit2');
 
@@ -16,6 +16,7 @@ const step1Form = document.getElementById('step1Form');
 step1Form.addEventListener('submit', (e) => {
 e.preventDefault();
 if (!step1Form.checkValidity()) return;
+    customer = []
     const formData = new FormData(step1Form);
     const data = {
         name: formData.get('name'),
@@ -108,9 +109,14 @@ const plan3 = document.getElementById('plan3');
 const plan3p = plan3.querySelector('p');
 const monthsFree = document.querySelectorAll('.monthInfo');
 const plans = document.querySelectorAll('.plan')
+const change = document.getElementById('yearly');
+const change1 = document.getElementById('monthly');
 
 toggle.addEventListener('change',()=>{
   if (toggle.checked) {
+
+    change.classList.add('selectedSwitch');
+    change1.classList.remove('selectedSwitch');
     // yearly options
     monthsFree.forEach((month)=>{
       month.classList.remove('monthsFreeHidden');
@@ -122,6 +128,12 @@ toggle.addEventListener('change',()=>{
     plan2p.textContent = '$120/yr'
     plan3p.textContent = '$150/yr'
   } else {
+    const change = document.getElementById('yearly');
+    const change1 = document.getElementById('monthly');
+
+    change.classList.remove('selectedSwitch');
+    change1.classList.add('selectedSwitch');
+
     // monthly options
     monthsFree.forEach((month)=>{
       month.classList.add('monthsFreeHidden');
@@ -135,15 +147,49 @@ toggle.addEventListener('change',()=>{
 const planBtn = document.getElementById('submit2');
 
 planBtn.addEventListener('click',()=>{
+  console.log(toggle.checked)
+  if (toggle.checked === true){
+    customer[0].status = 'yearly';
+  } else {
+    customer[0].status = 'monthly'
+  }
+  const active = document.querySelector('.active');
+  const active2 = active.querySelector('h2').textContent;
+  customer[0].package = active2;
   step2.classList.add('hidden');
   step3.classList.remove('hidden');
+  const service1custom = document.getElementById('service1custom');
+  const service2custom = document.getElementById('service2custom');
+  const service3custom = document.getElementById('service3custom');
+  if (customer[0].status === 'yearly'){
+    service1custom.textContent = '+$10/yr';
+    service2custom.textContent = '+$20/yr';
+    service3custom.textContent = '+$20/yr';
+  } else {
+    service1custom.textContent = '+$1/mo';
+    service2custom.textContent = '+$2/mo';
+    service3custom.textContent = '+$2/mo';
+  }
 })
+
+
 
 const planBtn1 = document.getElementById('submit3');
 
 planBtn1.addEventListener('click',()=>{
+  console.log(customer)
   step3.classList.add('hidden');
   step4.classList.remove('hidden');
+  const checkboxes = document.querySelectorAll('.serviceInputInner')
+  let checkedboxesarr = []
+  checkboxes.forEach((box)=>{
+    if (box.checked == true){
+      checkedboxesarr.push(box.id);
+    }
+  })
+  if (customer === null || customer === undefined) return;
+  customer[0].requiredServices = checkedboxesarr;
+  console.log(customer);
 })
 
 const back2 = document.getElementById('back2');
@@ -159,3 +205,38 @@ back3.addEventListener(('click'),()=>{
   step4.classList.add('hidden');
   step3.classList.remove('hidden');
 })
+
+const checkboxesToSelect = document.querySelectorAll('.serviceInputInner');
+checkboxesToSelect.forEach((box)=>{
+  box.addEventListener('change',()=>{
+    console.log(box.checked);
+    if (box.checked){
+      const parent = box.closest('.service');
+      parent.style.border = '2px solid hsl(213, 96%, 18%)';
+      parent.style.backgroundColor = 'hsl(218, 100%, 97%)';
+    } else {
+      const parent = box.closest('.service');
+      parent.style.border = '2px solid hsl(229, 24%, 87%)';
+      parent.style.backgroundColor = 'hsla(0, 0%, 100%, 1.00)';
+    }
+  })
+})
+
+const cards = document.querySelectorAll('.service');
+
+cards.forEach((card) => {
+  card.addEventListener('click', (e) => {
+    if (e.target.type === 'checkbox') return;
+    const checkbox = card.querySelector('input[type="checkbox"]');
+    checkbox.checked = !checkbox.checked;
+    if (checkbox.checked){
+      const parent = checkbox.closest('.service');
+      parent.style.border = '2px solid hsl(213, 96%, 18%)';
+      parent.style.backgroundColor = 'hsl(218, 100%, 97%)';
+    } else {
+      const parent = checkbox.closest('.service');
+      parent.style.border = '2px solid hsl(229, 24%, 87%)';
+      parent.style.backgroundColor = 'hsla(0, 0%, 100%, 1.00)';
+    }
+  })
+  });

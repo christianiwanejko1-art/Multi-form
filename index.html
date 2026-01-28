@@ -17,7 +17,7 @@
   </style>
 </head>
 <body>
-  <div id="step1" class="steps">
+  <div id="step1" class="steps hidden">
   <div id="main">
     <div id="formMain">
       <div id="sideBar">
@@ -132,14 +132,14 @@
         <div id="monthlyyearly">
           <div id="monthlyyearlycontainer">
             <div class="billing-switch">
-              <span class="label selectedSwitch">Monthly</span>
+              <span id="monthly" class="label selectedSwitch">Monthly</span>
 
               <label class="toggle">
                 <input type="checkbox" id="billingToggle">
                 <span class="pill" aria-hidden="true"></span>
               </label>
 
-              <span class="label">Yearly</span>
+              <span id="yearly" class="label">Yearly</span>
             </div>
           </div>
         </div>
@@ -154,7 +154,7 @@
   </div>
 
 
-    <div id="step3" class="steps hidden">
+    <div id="step3" class="steps">
   <div id="main">
     <div id="formMain">
       <div id="sideBar">
@@ -181,8 +181,38 @@
           </div>
         </div>
       </div>
-      <div id="infoPlan">
-        <div id="step2btn" >
+      <div id="addOns">
+        <div id="personalInfoSection">
+          <h1>Pick add-ons</h1>
+          <p>Add-ons help enhance your gaming experience.</p>
+        </div>
+        <div id="services">
+          <div class="service" id="service1">
+            <div class='serviceInput'>
+              <input class="serviceInputInner" id="service1" type="checkbox" name="service1">
+            </div>
+            <h1 class="onlineService">Online service</h1>
+            <p class="mutliplayerService">Access to multiplayer games</p>
+            <p id="service1custom" class="customizeService"></p>
+          </div>
+          <div class="service" id="service2">
+            <div class="serviceInput">
+              <input class="serviceInputInner" id="service2" type="checkbox" name="service2">
+            </div>
+            <h1 class="onlineService">Laser storage</h1>
+            <p class="mutliplayerService">Extra 1TB of cloud save</p>
+            <p id="service2custom" class="customizeService"></p>
+          </div>
+          <div class="service" id="service3">
+            <div class="serviceInput">
+              <input class="serviceInputInner" id="service3" type="checkbox" name="service3">
+            </div>
+            <h1 class="onlineService">Customizable profile</h1>
+            <p class="mutliplayerService">Custom theme on your profile</p>
+            <p id="service3custom" class="customizeService"></p>
+          </div>
+        </div>
+        <div id="step2btn">
           <button class="back" id="back2">Go Back</button>
           <button type="submit" class="submit1" id="submit3">Next Step</button>
         </div>
