@@ -493,6 +493,72 @@ font-weight: bold;
     height: 100%;
     grid-row: 2 / 3;
     grid-column: 2;
+    display: grid;
+    grid-template-rows: 1fr auto;
+    grid-template-columns: auto 1fr;
+}
+
+#invoice h1 {
+    padding: 8px;
+}
+
+#total {
+    grid-row: 3;
+    grid-column: 2;
+}
+
+#invoiceTop {
+    grid-row: 1;
+    width: 100%;
+    height: 100%;
+    padding-bottom: 16px;
+    margin-top: 16px;
+}
+
+#invoiceBottom {
+    grid-row: 2;
+    width: 100%;
+    height: 100%;
+    padding-top: 16px;
+    margin-bottom: 16px;
+}
+
+.colorGray {
+    color: var(--grey500);
+    font-size: var(--fontBodySize);
+    font-weight: lighter;
+}
+
+#invoiceTop:first-child {
+    color: var(--blue950);
+    font-size: 8px;
+}
+
+.change {
+    text-decoration: underline;
+    color: var(--grey500);
+}
+
+.monthlyAmount {
+    font-size: 16px;
+    color: var(--blue950);
+    font-weight: lighter;
+    grid-column: 2;
+    grid-row: 3;
+    justify-self: end;
+    align-self: center;
+}
+
+.monthlyAmount1 {
+    grid-row: 2;
+}
+
+.changeHigher {
+    font-size: 16px;
+    grid-column: 2;
+    grid-row: 1 / 3;
+    justify-self: end;
+    align-self: center;
 }
 
 .hidden {
