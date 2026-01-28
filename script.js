@@ -190,6 +190,106 @@ planBtn1.addEventListener('click',()=>{
   if (customer === null || customer === undefined) return;
   customer[0].requiredServices = checkedboxesarr;
   console.log(customer);
+
+  let serviceCosts = [['yearly',['service1',10],['service2',20],['service3',20]],['monthly',['service1',1],['serice2',2],['service3',2]]]
+  const serviceType = document.querySelector('.serviceType');
+  const changeHigher = document.querySelector('.changeHigher');
+  if (customer[0].status === 'yearly'){
+    if (customer[0].package === 'Arcade'){
+      serviceType.textContent = 'Arcade (Yearly)';
+      changeHigher.textContent = '$90/yr'
+    } else if (customer[0].package === 'Advanced'){
+      serviceType.textContent = 'Advanced (Yearly)';
+      changeHigher.textContent = '$120/yr'
+    } else if (customer[0].package === 'Pro'){
+      serviceType.textContent = 'Pro (Yearly)';
+      changeHigher.textContent = '$150/yr'
+    }
+
+          //   <h1 class="colorGray">Online service</h1>
+          // <h1 class="colorGray">Larger storage</h1>
+          // <h1 class="monthlyAmount monthlyAmount1">+$1/mo</h1>
+          // <h1 class="monthlyAmount monthlyAmount2">+$2/mo</h1>
+
+  } else if (customer[0].status === 'monthly'){
+    if (customer[0].package === 'Arcade'){
+      serviceType.textContent = 'Arcade (Monthly)';
+      changeHigher.textContent = '$9/mo';
+    } else if (customer[0].package === 'Advanced'){
+      serviceType.textContent = 'Advanced (Monthly)';
+      changeHigher.textContent = '$12/mo';
+    }  else if (customer[0].package === 'Pro'){
+      serviceType.textContent = 'Pro (Monthly)';
+      changeHigher.textContent = '$15/mo';
+    }
+  }
+
+    if (customer[0].requiredServices.length > 0){
+      const invoiceServices = document.getElementById('invoice');
+      const resetService = document.querySelectorAll('.monthlyAmount');
+      const resetServiceTitle = document.querySelectorAll('.serviceText');
+      resetService.forEach((service)=>{
+        service.remove();
+      })
+      resetServiceTitle.forEach((service)=>{
+        service.remove();
+      })
+      for (let i=0; i < customer[0].requiredServices.length; i++){
+        let service = customer[0].requiredServices[i];
+        if (service === 'service1'){
+          const div = document.createElement('div');
+          div.classList.add('invoiceCard');
+          const onlineh1 = document.createElement('h1');
+          onlineh1.textContent = 'Online service';
+          onlineh1.classList.add('colorGray');
+          onlineh1.classList.add('serviceText');
+          const onlineAmount = document.createElement('h1');
+          onlineAmount.classList.add('monthlyAmount');
+          // onlineAmount.classList.add('monthlyAmount1');
+          if (customer[0].status === 'yearly'){
+            onlineAmount.textContent = '+$10/yr';
+          } else if (customer[0].status === 'monthly') {
+            onlineAmount.textContent = '+$1/mo';
+          }
+          div.append(onlineh1, onlineAmount);
+          invoiceServices.append(div);
+        }
+        if (service === 'service2'){
+          const div = document.createElement('div');
+          div.classList.add('invoiceCard');
+          const onlineh1 = document.createElement('h1');
+          onlineh1.textContent = 'Laser storage';
+          onlineh1.classList.add('colorGray');
+          onlineh1.classList.add('serviceText');
+          const onlineAmount = document.createElement('h1');
+          onlineAmount.classList.add('monthlyAmount');
+          // onlineAmount.classList.add('monthlyAmount2');
+          if (customer[0].status === 'yearly'){
+            onlineAmount.textContent = '+$20/yr';
+          } else if (customer[0].status === 'monthly') {
+            onlineAmount.textContent = '+$2/mo';
+          }
+          div.append(onlineh1, onlineAmount);
+          invoiceServices.append(div);        }
+        if (service === 'service3'){
+          const div = document.createElement('div');
+          div.classList.add('invoiceCard');
+          const onlineh1 = document.createElement('h1');
+          onlineh1.textContent = 'Customizable profile';
+          onlineh1.classList.add('colorGray');
+          onlineh1.classList.add('serviceText');
+          const onlineAmount = document.createElement('h1');
+          onlineAmount.classList.add('monthlyAmount');
+          // onlineAmount.classList.add('monthlyAmount1');
+          if (customer[0].status === 'yearly'){
+            onlineAmount.textContent = '+$20/yr';
+          } else if (customer[0].status === 'monthly') {
+            onlineAmount.textContent = '+$2/mo';
+          }
+          div.append(onlineh1, onlineAmount);
+          invoiceServices.append(div);        }
+      }
+    }
 })
 
 const back2 = document.getElementById('back2');
@@ -240,3 +340,4 @@ cards.forEach((card) => {
     }
   })
   });
+
