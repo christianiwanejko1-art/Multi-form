@@ -578,6 +578,33 @@ font-weight: bold;
     color: var(--purple600);
 }
 
+#mainConfirmation {
+    grid-column: 2 / 4;
+    grid-row: 1 / 7;
+    background-color: rgb(255, 255, 255);
+    display: grid;
+    grid-template-rows: 1fr auto 1fr;
+    grid-template-columns: 1fr 6fr 1fr;
+}
+
+#mainConfirmationInner {
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    text-align: center;
+}
+
+#mainConfirmationInner h1 {
+    color: var(--blue950);
+}
+
+#mainConfirmationInner p {
+    color: var(--grey500);
+}
+
+#mainConfirmationInner > * {
+    padding: 8px;
+}
+
 .hidden {
     display: none;
 }
