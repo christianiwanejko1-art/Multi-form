@@ -613,6 +613,8 @@ font-weight: bold;
 @media (max-width: 768px){
     * {
         box-sizing: border-box;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
     }
     html, body {
         overflow: visible;
@@ -651,7 +653,6 @@ font-weight: bold;
         grid-row: auto;
         grid-column: auto;
         margin: 16px;
-        margin-top: -5rem;
         border-radius: 16px;
         box-sizing: border-box;
     }  
@@ -677,6 +678,27 @@ font-weight: bold;
 
     .formInner {
         padding: 16px;
+    }
+
+    #nextSteps {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;       /* so content doesn’t show behind */
+        padding: 16px;
+        padding-right: 32px;
+        z-index: 999;
+    }
+    #step2btn {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: white;       /* so content doesn’t show behind */
+        padding: 16px;
+        padding-right: 32px;
+        z-index: 1000;
     }
 }
 
