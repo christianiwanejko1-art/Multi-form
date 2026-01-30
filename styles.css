@@ -23,12 +23,15 @@
 * {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 body {
     background-color: var(--blue100);
     font-size: var(--fontBodySize);
     font-family: var(--fontBodyFamily);
+    margin: 0; 
+    padding: 0;
 }
 
 html, body {
@@ -91,8 +94,8 @@ html, body {
 
 #main {
     display: grid;
-    width: 100vw;
-    height: 100vh;
+    width: 100%;
+    height: 100%;
     grid-template-columns: 1fr 3fr 1fr;
     grid-template-rows: 1fr 6fr 1fr;
     box-sizing: border-box;
@@ -108,6 +111,7 @@ html, body {
     padding: 16px;
     border-radius: 32px;
 }
+
 
 #sideBar {
     grid-column: 0 / 1;
@@ -607,14 +611,21 @@ font-weight: bold;
 }
 
 @media (max-width: 768px){
+    * {
+        box-sizing: border-box;
+    }
     html, body {
         overflow: visible;
     }
+
     #main {
         grid-template-columns: 1fr;
         grid-template-rows: 1fr;
         min-width: 0;
         width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+
     }
 
     #formMain {
@@ -624,6 +635,7 @@ font-weight: bold;
         grid-template-columns: none;
         box-sizing: border-box;
         display:block;
+        min-width: 0;
     }
 
     #sideBar {
@@ -639,7 +651,7 @@ font-weight: bold;
         grid-row: auto;
         grid-column: auto;
         margin: 16px;
-        /* margin-top: -35%; */
+        margin-top: -5rem;
         border-radius: 16px;
         box-sizing: border-box;
     }  
@@ -668,8 +680,3 @@ font-weight: bold;
     }
 }
 
-@media (max-width: 550px){
-    #info {
-        /* margin-top: -50%; */
-    }
-}
