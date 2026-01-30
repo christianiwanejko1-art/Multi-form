@@ -617,18 +617,27 @@ font-weight: bold;
         grid-row: auto;
         padding: 0;
         grid-template-columns: none;
-        grid-template-rows: 1fr auto 1fr;
+        box-sizing: border-box;
+
     }
 
     #sideBar {
         border-radius: 0;
         grid-row: auto;
         grid-column: auto;
+        background-position: bottom center;
+        background-size: cover;
     }
 
     #info {
         grid-row: auto;
         grid-column: auto;
+        margin: 16px;
+        margin-top: -35%;
+        border-radius: 16px;
+    }  
+    .infoSection {
+        padding: 32px;
     }
 
     .stepNo, .stepInfo {
@@ -637,5 +646,19 @@ font-weight: bold;
 
     #sideBarSteps {
         flex-direction: row;
+        display: flex;
+        place-items: center;
+        justify-content: center;
+    }
+
+    .step {
+        grid-template-columns: auto;
+    }
+
+}
+
+@media (max-width: 550px){
+    #info {
+        margin-top: -50%;
     }
 }
